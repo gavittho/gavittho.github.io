@@ -1,76 +1,60 @@
-# Base
+# The Plain
 
-Knowledge base template for Jekyll. Browse through a [live demo](https://orange-ape.cloudvent.net/).
+> The Plain is a minimalist Jekyll theme, ideally designed for your personal blog use. This Jekyll theme provides a minimum distraction so you can focus on writing that matters to you and your readers. This theme is originally inspired from [Leonard Lamprecht's _leo_ theme](https://github.com/leo/leo.github.io).
 
-![Base template screenshot](images/_screenshot.png)
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![GENERATOR](https://img.shields.io/badge/made_with-jekyll-blue.svg) ![VERSION](https://img.shields.io/badge/current_version-4.0-green.svg) ![TRAVIS-CI](https://travis-ci.org/heiswayi/the-plain.svg?branch=master)
 
-Base was made by [CloudCannon](http://cloudcannon.com/), the Cloud CMS for Jekyll.
+- **Demo:** https://heiswayi.github.io/the-plain/
 
-Find more templates, themes and step-by-step Jekyll tutorials at [CloudCannon Academy](https://learn.cloudcannon.com/).
+![SCREENSHOT](https://i.imgur.com/FITKN1H.png)
 
-## Features
+## Usage
 
-* Tutorials organised by category
-* Two types of tutorials - text and video
-* Ability to have a "tutorial series"
-* FAQ section
-* Disqus comments
-* Sticky sidebar for main headings in tutorials
-* Optimised for editing in [CloudCannon](http://cloudcannon.com/)
-* RSS/Atom feed
-* SEO tags
-* Google Analytics
+### On an unlimited Jekyll host
 
-## Setup
+> **NOTE** This does NOT work on GitHub, see the next section.
 
-1. Add your site and author details in `_config.yml`.
-2. Add your Google Analytics, Disqus and MailChimp keys to `_config.yml`.
-3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/) or Jekyll locally).
+Put this in your *Gemfile*:
 
-## Develop
+	gem 'the-plain'
 
-Base was built with [Jekyll](http://jekyllrb.com/) version 3.4.3, but should support newer versions as well.
+and run `bundle install` to install the plugin.
 
-Install the dependencies with [Bundler](http://bundler.io/):
+Add this to your sites *_config.yml* file:
 
-~~~bash
-$ bundle install
-~~~
+	theme: the-plain
 
-Run `jekyll` commands through Bundler to ensure you're using the right versions:
+Then copy some of the settings from this repo's *_config.yml* file to your own, and modify them.
 
-~~~bash
-$ bundle exec jekyll serve
-~~~
+### On GitHub
 
-## Editing
+GitHub - for your user account pages or repository gh-pages - only supports a limited set of themes.
 
-Base is already optimised for adding, updating and removing tutorials, navigation, footer and FAQ information in CloudCannon.
+Therefore, you need to use the 'remote\_theme:' setting instead of 'theme:', which is supported by [a 3rd party plugin](https://github.com/benbalter/jekyll-remote-theme).
 
-The sticky sidebar in tutorials in populated by pulling out `<h2>` elements from the content.
+Put this in your *Gemfile*:
 
-### Posts
+	gem 'jekyll-remote-theme'
 
-* Add, update or remove a post in the *Posts* collection.
-* The tutorials page is organised by categories.
-* Change the defaults when new posts are created in `_posts/_defaults.md`.
+and run `bundle install` to install the plugin.
 
-### Post Series
-To create a new series:
+Add the following to your site's *_config.yml* to activate the plugin and to select this theme:
 
-* Add a new document to the `sets` collection.
-* Set the `title` and `description`.
+	plugins:
+	  - jekyll-remote-theme
 
-To add a tutorial/post to a series:
-* Add a `set` field to the tutorial front matter which points to the file name of the desired set without the `.md` extention. e.g. If I have a set at `_sets/getting-started.md` I would use this in my tutorial front matter: `set: getting-started`.
-* Add a `set_order` field to the tutorial front matter and specify a number. This is the tutorials order in the set.
+	remote_theme: heiswayi/the-plain
 
-### Navigation
+This will grab the theme directly from the GitHub repo.
 
-* Exposed as a data file to give clients better access.
-* Set in the *Data* / *Navigation* section.
+Now copy some of the settings from this repo's *_config.yml* file to your own, and modify them.
 
-### Footer
+## Authors
 
-* Exposed as a data file to give clients better access.
-* Set in the *Data* / *Footer* section.
+- [**Heiswayi Nrird**](https://heiswayi.nrird.com)
+
+See also the list of [contributors](https://github.com/heiswayi/the-plain/graphs/contributors) who participated in this project.
+
+## License
+
+[MIT](LICENSE)
